@@ -14,6 +14,14 @@ import {
     FaMicrochip
 } from 'react-icons/fa';
 
+// Import local assets so Vite processes them correctly for production
+import ProfileImage from './assets/ProfileImage.jpg';
+import SecondProfile from './assets/SecondProfile.jpg';
+import SertifHTML from './assets/SertifHTML.png';
+import SertifJS from './assets/SertifJS.png';
+import SertifTimedoor from './assets/SertifTimedoor.jpeg';
+import XenoAether from './assets/XenoAether.png';
+
 export default function App() {
     const [activeSection, setActiveSection] = useState('home');
 
@@ -21,19 +29,19 @@ export default function App() {
         {
             title: "HTML completion course from Dicoding",
             description: "Completing basic HTML crash course.",
-            image: "./src/assets/SertifHTML.png",
+            image: SertifHTML,
             link: "#"
         },
         {
             title: "JavaScript from Dicoding",
             description: "Completing JavaScript crash course",
-            image: "./src/assets/SertifJS.png",
+            image: SertifJS,
             link: "#"
         },
         {
             title: "Coding class from Timedoor",
             description: "Completing coding class from Timedoor",
-            image: "./src/assets/SertifTimedoor.jpeg",
+            image: SertifTimedoor,
             link: "#"
         }
     ];
@@ -42,7 +50,7 @@ export default function App() {
         {
             title: "XenoAether",
             description: "An online game shop platform where it'll find the best deals instantly, automatically",
-            image: "./src/assets/XenoAether.png",
+            image: XenoAether,
             link: "https://felix708.github.io/XenoAether/"
         },
         {
@@ -144,7 +152,7 @@ export default function App() {
                     <div className="lg:col-span-5 flex justify-center lg:justify-end items-center z-10">
                         <ScrollReveal direction="down" delay={300}>
                             <ProfilePictureComponent
-                                imageUrl="./src/assets/ProfileImage.jpg"
+                                imageUrl={ProfileImage}
                                 sizeClass="w-70 h-70 md:w-90 md:h-90"
                             />
                         </ScrollReveal>
@@ -170,7 +178,7 @@ export default function App() {
                         <div className="lg:col-span-4 flex justify-center items-center">
                             <ScrollReveal direction="up" delay={200}>
                                 <ProfilePictureComponent
-                                    imageUrl="./src/assets/SecondProfile.jpg"
+                                    imageUrl={SecondProfile}
                                     sizeClass="w-48 h-48 md:w-80 md:h-80"
                                 />
                             </ScrollReveal>
