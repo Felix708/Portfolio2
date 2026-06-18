@@ -15,7 +15,6 @@ import {
 } from 'react-icons/fa';
 
 export default function App() {
-    // State to track which section is currently in view for the navbar highlight
     const [activeSection, setActiveSection] = useState('home');
 
     const certificatesList = [
@@ -68,8 +67,6 @@ export default function App() {
         { name: "Laravel Framework", bar: "■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■□□□□□□□", percent: "70%" },
     ];
 
-    // --- SMOOTH SCROLL OBSERVER ---
-    // Detects scroll position and dynamically lights up the matching navbar tab
     useEffect(() => {
         const handleScroll = () => {
             // All sections available in our navigation
@@ -95,7 +92,6 @@ export default function App() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Handles the smooth scrolling action when a navbar menu link is clicked
     const scrollToSection = (id) => {
         const targetElement = document.getElementById(id);
         if (targetElement) {
@@ -110,13 +106,11 @@ export default function App() {
             <div className="absolute top-0 left-1/4 h-full bg-white/2 pointer-events-none" />
             <div className="absolute top-0 right-1/4 h-full bg-white/2 pointer-events-none" />
 
-            {/* Navbar */}
             <NavbarComponent
                 scrollToSection={scrollToSection}
                 activeSection={activeSection}
             />
 
-            {/* Profile Section */}
             <section id="home" className="section-spacing relative overflow-hidden pt-28">
                 <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 items-center">
 
@@ -147,10 +141,8 @@ export default function App() {
                         </ScrollReveal>
                     </div>
 
-                    {/* Right Column - Beautiful Concentric HUD Profile circle */}
                     <div className="lg:col-span-5 flex justify-center lg:justify-end items-center z-10">
                         <ScrollReveal direction="down" delay={300}>
-                            {/* Profile Picture Circle using prop imageUrl */}
                             <ProfilePictureComponent
                                 imageUrl="./src/assets/ProfileImage.jpg"
                                 sizeClass="w-70 h-70 md:w-90 md:h-90"
@@ -160,7 +152,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* About Section */}
             <section id="about" className="section-spacing border-t border-white/5 bg-ef-card/10">
                 <div className="max-w-7xl mx-auto w-full">
 
@@ -232,7 +223,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Certificate Section */}
             <section id="certificates" className="section-spacing border-t border-white/5">
                 <div className="max-w-7xl mx-auto w-full">
 
@@ -260,7 +250,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Skills Section */}
             <section id="skills" className="section-spacing border-t border-white/5 bg-ef-card/10">
                 <div className="max-w-7xl mx-auto w-full">
 
@@ -324,7 +313,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Projects Section */}
             <section id="projects" className="section-spacing border-t border-white/5">
                 <div className="max-w-7xl mx-auto w-full">
 
@@ -352,7 +340,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Contact Section */}
             <section id="contact" className="section-spacing border-t border-white/5 bg-ef-card/10 relative overflow-hidden">
 
                 <div className="absolute top-0 right-0 w-24 h-24 border-r border-t border-white/5 pointer-events-none" />
@@ -423,7 +410,6 @@ export default function App() {
                 </div>
             </section>
 
-            {/* Footer */}
             <footer className="py-6 border-t border-white/5 bg-ef-bg text-center font-mono text-[13px] text-ef-muted">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center">
                     <span>© 2026 // SAMUEL FELIX .S </span>
