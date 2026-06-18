@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* 
+  Tailwind v4 custom theme configuration.
+  By placing variables in the `@theme` directive, Tailwind automatically creates utility
+  classes like `bg-ef-bg`, `text-ef-accent`, `border-ef-accent`, etc.
+*/
+@theme {
+  --color-ef-bg: #303030;       
+  --color-ef-card: #1c1c1f;     
+  --color-ef-text: #f3f4f6;     
+  --color-ef-muted: #828288;   
+  --color-ef-accent: #ffb900;   /* Signature Arknights golden amber accent */
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base custom styles */
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ef-bg);
+  color: var(--color-ef-text);
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Custom technical HUD grid background (Golden tint) */
+.tech-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 185, 0, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 185, 0, 0.015) 1px, transparent 1px);
+}
+
+/* Sleek minimalist scrollbar to fit the operating system HUD feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ef-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #252528;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ef-accent);
+}
+
+/* Section spacing utility */
+.section-spacing {
+  padding: 6rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding: 6rem 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding: 6rem 6rem;
+  }
+}
+
+/* Subtle pulse glow for active HUD items */
+.hud-glow {
+  text-shadow: 0 0 8px rgba(93, 169, 236, 0.6);
+}
