@@ -21,6 +21,8 @@ import SertifHTML from './assets/SertifHTML.png';
 import SertifJS from './assets/SertifJS.png';
 import SertifTimedoor from './assets/SertifTimedoor.jpeg';
 import XenoAether from './assets/XenoAether.png';
+import PlatziFakeStore from './assets/PlatziFakeStore.png';
+import YugiMarket from './assets/YugiMarket.png';
 
 export default function App() {
     const [activeSection, setActiveSection] = useState('home');
@@ -54,15 +56,15 @@ export default function App() {
             link: "https://felix708.github.io/XenoAether/"
         },
         {
-            title: "Rhodes Logistics Core",
-            description: "High-performance logistics inventory application using Vite and tailwind custom utility libraries.",
-            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop",
-            link: "#"
+            title: "Platzi Fake Store",
+            description: "A fake E-Commerce web using a public API.",
+            image: PlatziFakeStore,
+            link: "https://felix708.github.io/FakeStore-ReactJS/"
         },
         {
-            title: "Neural Node Communications",
-            description: "Real-time communication app built on full-stack protocols, wrapped in glassmorphic computer console themes.",
-            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop",
+            title: "Yugi Market",
+            description: "A Mock E-Commerce website using an API made by myself and Frontend using ReactJS.",
+            image: YugiMarket,
             link: "#"
         }
     ];
